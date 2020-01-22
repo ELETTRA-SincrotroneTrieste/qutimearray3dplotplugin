@@ -1,0 +1,8 @@
+Example using the qutimearray3dplot plugin
+
+qmake
+make
+
+./bin/TextViewXWPluginExample  with no arguments: internal dummy data generator over time is used
+./bin/TextViewXWPluginExample [sources list] displays arrays of data over time from the sources specified (and supported by the cumbia engines currently available)
+
