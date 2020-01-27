@@ -149,8 +149,8 @@ QSurface3DSeries *QuTimeArray3DPlot::m_add_series(const QString &name)
 
 void QuTimeArray3DPlot::m_fix_origin_datetime(const double timestamp_ms)
 {
-    if(d->min_ts < 0 || timestamp_ms < d->min_ts) d->min_ts = timestamp_ms;
-    else if(d->max_ts < 0 || timestamp_ms > d->max_ts) d->max_ts = timestamp_ms;
+    if(d->min_ts < 0 ||d->max_ts < 0 ||  timestamp_ms < d->min_ts) d->min_ts = timestamp_ms;
+    else if(d->min_ts < 0 ||d->max_ts < 0 || timestamp_ms > d->max_ts) d->max_ts = timestamp_ms;
     if(!d->origin_date_time.isValid() || d->min_ts < d->origin_date_time.toMSecsSinceEpoch())
         setOriginDateTime(QDateTime::fromMSecsSinceEpoch(static_cast<qint64>(d->min_ts)));
 }
@@ -218,7 +218,6 @@ void QuTimeArray3DPlot::addTimeArray(const QString &name, double timestamp_ms, c
     dataRow->resize(xdata.size());
     if(d->m_maxNumRows < 0) {
         d->m_maxNumRows = 10000 / xdata.size();
-        printf("\e[1;32mQuTimeArray3DPlot.addTimeArray: limiting num rows to %d\e[0m\n", d->m_maxNumRows);
     }
 
     for(int i = 0; i < xdata.size() && i < ydata.size(); i++) {
@@ -249,6 +248,35 @@ void QuTimeArray3DPlot::onError(const QString &name, double timestamp_ms, const 
     }
     SurfStyleProps p(Q3DTheme::ColorStyleUniform, QColor(Qt::red));
     p.setOn(series);
+}
+
+void QuTimeArray3DPlot::onNewData(const CuData &da)
+{
+    if(da.has("type", "property")) {
+        printf("\e[1;36mQuTimeArray3DPlot.onNewData: \e[1;32mproperty\e[0m %s\e[0m\n", da.toString().c_str());
+    }
+}
+
+/*!
+ * \brief Remove all series from the plot
+ *
+ * If you do not include *qutimearray3dplot.h*, use
+ *
+ * \code
+ * // plot is a pointer to the QuTimeArray3DPlot
+ * // obtained with Q3DSurface *QuTimeArray3DPlotPlugin_I::create
+ * //
+ * QMetaObject::invokeMethod(plot, "clear");
+ * \endcode
+ *
+ */
+void QuTimeArray3DPlot::clear()
+{
+    foreach(QSurface3DSeries *s, seriesList()) {
+        removeSeries(s);
+    }
+    d->min_ts = d->max_ts = -1.0f;
+    setOriginDateTime(QDateTime());
 }
 
 void QuTimeArray3DPlot::xRangeChanged(float min, float max) {

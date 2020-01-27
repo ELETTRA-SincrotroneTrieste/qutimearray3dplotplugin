@@ -45,7 +45,7 @@ using namespace QtDataVisualization;
 
 QuTimeArrayPlotExample::QuTimeArrayPlotExample(QWidget *parent) :
     QMainWindow(parent) {
-
+    m_data_generator = nullptr;
     QWidget *centralW = new QWidget(this);
     QHBoxLayout *lo = new QHBoxLayout(centralW);
     setCentralWidget(centralW);
@@ -93,7 +93,7 @@ QuTimeArrayPlotExample::QuTimeArrayPlotExample(QWidget *parent) :
         // readers from cmd line, if specified, otherwise dummy sin data generator
         for(int i = 1; i < qApp->arguments().size(); i++) {
             QuTimeArrayReader_I *reader = pi->createReader(m_surface, cu_pool, m_ctrl_factory_pool);
-            reader->setLink(qApp->arguments()[i], qobject_cast<Q3DSurface *>(m_surface));
+            reader->setLink(qApp->arguments()[i], m_surface);
         }
         QSize screenSize = m_surface->screen()->size();
         container->setMinimumSize(QSize(screenSize.width() / 2, screenSize.height() / 1.6));
@@ -101,8 +101,6 @@ QuTimeArrayPlotExample::QuTimeArrayPlotExample(QWidget *parent) :
         container->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
         container->setFocusPolicy(Qt::StrongFocus);
         lo->addWidget(container);
-
-
 
         QMenuBar *mb  = menuBar();
         QMenu *m = mb->addMenu("File");
@@ -127,7 +125,8 @@ QuTimeArrayPlotExample::QuTimeArrayPlotExample(QWidget *parent) :
 }
 
 QuTimeArrayPlotExample::~QuTimeArrayPlotExample() {
-    delete m_data_generator;
+    if(m_data_generator)
+        delete m_data_generator;
     delete m_surface;
 }
 

@@ -21,7 +21,7 @@ public:
     virtual ~QuTimeArrayReader_I() {}
     virtual CuContext *getContext() const = 0;
     virtual QString link() const = 0;
-    virtual void setLink(const QString &s, Q3DSurface *plot) = 0;
+    virtual void setLink(const QString &s, QObject *plot) = 0;
     virtual void unsetLink() = 0;
 };
 

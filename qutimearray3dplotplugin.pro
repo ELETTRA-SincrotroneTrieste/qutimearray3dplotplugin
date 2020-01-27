@@ -35,14 +35,16 @@ SOURCES += \
 	src/qdatetime3daxisformatter.cpp \
 	src/qutimearray3dplot.cpp \
         src/qutimearray3dplotplugin.cpp \
-    src/qutimearray3dplotsettingswidget.cpp
+    src/qutimearray3dplotsettingswidget.cpp \
+    src/qutimearrayreader.cpp
 
 HEADERS += \
 	src/qutimearray3dplot.h \
 	src/qutimearray3dplotplugin.h \
 	src/qutimearray3dplotplugin_i.h \
         src/qdatetime3daxisformatter.h \
-    src/qutimearray3dplotsettingswidget.h
+    src/qutimearray3dplotsettingswidget.h \
+    src/qutimearrayreader.h
 
 INC_PATH = $${INSTALL_ROOT}/include/qumbia-plugins
 inc.files = src/qutimearray3dplot.h

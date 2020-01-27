@@ -5,6 +5,7 @@
 #include <QDate>
 
 class TimeArray3DPlotPrivate;
+class CuData;
 
 using namespace QtDataVisualization;
 
@@ -50,6 +51,8 @@ public slots:
     void addTimeArray(const QString& name, double timestamp_secs,
                       const QVector<double> &xdata, const QVector<double> &ydata);
     void onError(const QString& name, double timestamp_ms, const QString& message);
+    void onNewData(const CuData& da);
+    void clear();
 
 public slots:
 
