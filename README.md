@@ -3,6 +3,8 @@
 The *qutimearray3dplotplugin* employs the QtDataVisualization module to provide a means to display
 arrays of data over time. The time scale is on the Z axis.
 
+![The 3D plot from *qutimearray3dplotplugin* showing historical data](qu3dplot.png)
+
 ## Requirements
 
 - [QtDataVisualization module](https://doc.qt.io/qt-5/qtdatavisualization.html)
