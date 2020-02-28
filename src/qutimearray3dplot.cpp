@@ -241,6 +241,7 @@ void QuTimeArray3DPlot::addTimeArray(const QString &name, double timestamp_ms, c
 }
 
 void QuTimeArray3DPlot::onError(const QString &name, double timestamp_ms, const QString &message) {
+    Q_UNUSED(message)
     m_fix_origin_datetime(timestamp_ms);
     QSurface3DSeries *series = findSeries(name);
     if(!series) {
