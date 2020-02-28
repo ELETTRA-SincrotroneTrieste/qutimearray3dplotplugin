@@ -92,7 +92,7 @@ void QuTimeArrayReader::onUpdate(const CuData &data)
                             x.push_back(static_cast<double>(i));
                             y.push_back(todoublev[r * y_siz + i]);
                         }
-#if QT_VERSION < 0x051400
+#if QT_VERSION <  QT_VERSION_CHECK(5,14,0)
                         emit newData(src, ts_ms[r], QVector<double>::fromStdVector(x), QVector<double>::fromStdVector(y));
 #else
                         emit newData(src, ts_ms[r], QVector<double>(x.begin(), x.end()), QVector<double>(y.begin(), y.end()));
@@ -109,7 +109,7 @@ void QuTimeArrayReader::onUpdate(const CuData &data)
                 if(data.containsKey("x_values")) {
                     data["x_values"].toVector<double>(x);
                     if(x.size() == y.size())
-#if QT_VERSION < 0x051400
+#if QT_VERSION < QT_VERSION_CHECK(5,14,0)
                         emit newData(src, tsms, QVector<double>::fromStdVector(x), QVector<double>::fromStdVector(y));
 #else
                         emit newData(src, tsms, QVector<double>(x.begin(), x.end()), QVector<double>(y.begin(), y.end()));
@@ -118,7 +118,7 @@ void QuTimeArrayReader::onUpdate(const CuData &data)
                 else {
                     for(size_t i = 0; i < y.size(); i++)
                         x.push_back(i);
-#if QT_VERSION < 0x051400
+#if QT_VERSION < QT_VERSION_CHECK(5,14,0)
                         emit newData(src, tsms, QVector<double>::fromStdVector(x), QVector<double>::fromStdVector(y));
 #else
                     emit newData(src, tsms, QVector<double>(x.begin(), x.end()), QVector<double>(y.begin(), y.end()));
