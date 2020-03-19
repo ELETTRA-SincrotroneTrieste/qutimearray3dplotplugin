@@ -8,6 +8,10 @@ arrays of data over time. The time scale is on the Z axis.
 ## Requirements
 
 - [QtDataVisualization module](https://doc.qt.io/qt-5/qtdatavisualization.html)
+
+ubuntu: 
+> sudo apt-get install libqt5datavisualization5  libqt5datavisualization5-dev 
+
 - [cumbia-libs](https://github.com/ELETTRA-SincrotroneTrieste/cumbia-libs)
 
 ## Installation
