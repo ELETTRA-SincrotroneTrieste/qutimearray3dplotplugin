@@ -76,6 +76,6 @@ unix {
 # priority to src/ includes
 INCLUDEPATH = src + $${INCLUDEPATH}
 
-message("qutimearrayplotplugin: plugin *interface* installation dir: $${CUMBIA_QTCONTROLS_INCLUDES}")
+message("qutimearrayplotplugin: plugin *interface* installation dir:  $${CUMBIA_QTCONTROLS_INCLUDES}")
 message("qutimearrayplotplugin: plugin installation dir:  $${DEFINES_CUMBIA_QTCONTROLS_PLUGIN_DIR}")
 message("qutimearrayplotplugin: include installation dir: $${INC_PATH}")
