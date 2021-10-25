@@ -24,6 +24,8 @@ include($${INSTALL_ROOT}/include/cumbia-qtcontrols/cumbia-qtcontrols.pri)
 
 CUMBIA_QTCONTROLS_PLUGIN_INTERFACES_DIR=$${INSTALL_ROOT}/include/cumbia-qtcontrols
 
+CUMBIA_QTCONTROLS_PLUGIN_LIBDIR=$${INSTALL_ROOT}/lib/qumbia-plugins
+
 QT       += core gui  datavisualization
 
 TARGET = qutimearray3dplotplugin
@@ -69,7 +71,7 @@ DISTFILES += qutimearrayplotplugin.json  \
     README.md
 
 unix {
-    target.path = $${DEFINES_CUMBIA_QTCONTROLS_PLUGIN_DIR}
+    target.path = $${CUMBIA_QTCONTROLS_PLUGIN_LIBDIR}
     INSTALLS += target inc  pluginif
 }
 
@@ -77,5 +79,5 @@ unix {
 INCLUDEPATH = src + $${INCLUDEPATH}
 
 message("qutimearrayplotplugin: plugin *interface* installation dir:  $${CUMBIA_QTCONTROLS_INCLUDES}")
-message("qutimearrayplotplugin: plugin installation dir:  $${DEFINES_CUMBIA_QTCONTROLS_PLUGIN_DIR}")
+message("qutimearrayplotplugin: plugin installation dir:  $${CUMBIA_QTCONTROLS_PLUGIN_LIBDIR}")
 message("qutimearrayplotplugin: include installation dir: $${INC_PATH}")
