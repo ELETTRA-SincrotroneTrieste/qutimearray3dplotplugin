@@ -66,6 +66,7 @@ void QuTimeArrayReader::onUpdate(const CuData &data)
 {
     bool err = data["err"].toBool();
     QString src = QuString(data["src"].toString());
+    printf(" QuTimeArrayReader::onUpdate: %s\n", datos(data));
     // update link statistics
     d->ctx->getLinkStats()->addOperation();
     if(err) {

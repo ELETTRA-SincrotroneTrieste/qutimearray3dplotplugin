@@ -32,6 +32,8 @@ TARGET = qutimearray3dplotplugin
 TEMPLATE = lib
 CONFIG += plugin
 
+CONFIG += debug
+
 DEFINES -= QT_NO_DEBUG_OUTPUT
 
 # The following define makes your compiler emit warnings if you use
