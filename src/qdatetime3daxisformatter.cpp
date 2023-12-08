@@ -4,9 +4,8 @@
 #include <cumacros.h>
 #include <QtDebug>
 
-Q_DECLARE_METATYPE(QtDataVisualization::QValue3DAxisFormatter *)
+Q_DECLARE_METATYPE(QValue3DAxisFormatter *)
 
-using namespace  QtDataVisualization;
 
 static const qreal oneDayMs = 60.0 * 60.0 * 24.0 * 1000.0;
 

@@ -7,14 +7,13 @@
 class TimeArray3DPlotPrivate;
 class CuData;
 
-using namespace QtDataVisualization;
 
 /*! \brief
  *
  * - Axis Z is assigned to the time scale
  * - Axes auto range property is set to true
  */
-class QuTimeArray3DPlot : public QtDataVisualization::Q3DSurface
+class QuTimeArray3DPlot : public Q3DSurface
 {
     Q_OBJECT
     Q_PROPERTY(int  xAxisAutoscaleEnabled READ xAxisAutoscaleEnabled WRITE setXAxisAutoscaleEnabled)

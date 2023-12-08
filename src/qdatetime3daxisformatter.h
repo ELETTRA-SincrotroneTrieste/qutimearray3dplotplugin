@@ -4,10 +4,11 @@
 #include <QValue3DAxisFormatter>
 #include <QDateTime>
 #include <QVector>
+#include <QtDataVisualization>
 
 class QDateTime3DAxisFormatterPrivate;
 
-class QDateTime3DAxisFormatter : public QtDataVisualization::QValue3DAxisFormatter
+class QDateTime3DAxisFormatter : public QValue3DAxisFormatter
 {
     Q_OBJECT
 

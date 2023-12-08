@@ -28,6 +28,10 @@ CUMBIA_QTCONTROLS_PLUGIN_LIBDIR=$${INSTALL_ROOT}/lib/qumbia-plugins
 
 QT       += core gui  datavisualization
 
+greaterThan(QT_MAJOR_VERSION, 5) {
+QT += graphs
+}
+
 TARGET = qutimearray3dplotplugin
 TEMPLATE = lib
 CONFIG += plugin
