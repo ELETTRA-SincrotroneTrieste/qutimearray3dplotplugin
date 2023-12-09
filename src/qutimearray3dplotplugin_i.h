@@ -5,7 +5,7 @@
 #include <QString>
 #include <cudata.h>
 
-#include <QtDataVisualization/Q3DSurface>
+#include <QWindow>
 
 class Cumbia;
 class CuControlsReaderFactoryI;
@@ -13,8 +13,6 @@ class CumbiaPool;
 class CuControlsFactoryPool;
 class QDateTime;
 class CuContext;
-
-using namespace QtDataVisualization;
 
 class QuTimeArrayReader_I {
 public:
@@ -53,7 +51,7 @@ public:
      *
      * \note Subclasses will implement the appropriate create method.
      */
-    virtual Q3DSurface *create(const QString& name, QWindow *parent) {
+    virtual QWindow *create(const QString& name, QWindow *parent) {
         Q_UNUSED(name)
         Q_UNUSED(parent)
         return nullptr;

@@ -5,6 +5,7 @@
 #include <qulogimpl.h>
 
 class DataGenerator;
+class Q3DSurface;
 
 class QuTimeArrayPlotExample : public QMainWindow
 {

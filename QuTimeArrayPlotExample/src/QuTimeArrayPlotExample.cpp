@@ -41,7 +41,6 @@
 
 #include "datagenerator.h"
 
-using namespace QtDataVisualization;
 
 QuTimeArrayPlotExample::QuTimeArrayPlotExample(QWidget *parent) :
     QMainWindow(parent) {
@@ -85,7 +84,7 @@ QuTimeArrayPlotExample::QuTimeArrayPlotExample(QWidget *parent) :
     QuTimeArray3DPlotPlugin_I *pi = ploader.get<QuTimeArray3DPlotPlugin_I>("qutimearray3dplotplugin.so", &pl_obj);
     if(pi) {
         m_surface = pi->create("QuTimeArray3DPlot", 0);
-        m_surface->setFlags(m_surface->flags() ^ Qt::FramelessWindowHint);
+        // m_surface->setFlags(m_surface->flags() ^ Qt::FramelessWindowHint);
         m_surface->setProperty("maxNumRows", 1000);
         m_surface->resize(800, 800);
         QWidget *container = QWidget::createWindowContainer(m_surface, centralW);

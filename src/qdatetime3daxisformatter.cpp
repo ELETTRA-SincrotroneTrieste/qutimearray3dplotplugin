@@ -41,7 +41,7 @@ QValue3DAxisFormatter *QDateTime3DAxisFormatter::createNewInstance() const
 
 void QDateTime3DAxisFormatter::populateCopy(QValue3DAxisFormatter &copy) const
 {
-    QValue3DAxisFormatter::populateCopy(copy);
+    // QValue3DAxisFormatter::populateCopy(copy);
 
     QDateTime3DAxisFormatter *dateTimeFormatter = static_cast<QDateTime3DAxisFormatter *>(&copy);
     dateTimeFormatter->d->m_originDateTime = d->m_originDateTime;
@@ -112,7 +112,7 @@ void QDateTime3DAxisFormatter::recalculate()
     }
 }
 
-QString QDateTime3DAxisFormatter::stringForValue(qreal value, const QString &format) const
+QString QDateTime3DAxisFormatter::stringForValue(qreal value, const QString &format)
 {
     Q_UNUSED(format)
     return valueToDateTime(value).toString(d->m_selectionFormat);

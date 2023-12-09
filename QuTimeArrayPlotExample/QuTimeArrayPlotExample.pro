@@ -19,10 +19,12 @@ exists($${INSTALL_ROOT}/include/cumbia-random/cumbia-random.pri) {
 
 TEMPLATE = app
 
-QT +=  core gui datavisualization
+QT +=  core gui
+
+QT += graphs
 
 
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets x11extras
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 CONFIG +=
 
@@ -61,7 +63,7 @@ HEADERS += \
 #
 INCLUDEPATH += ui src
 
-TARGET   = bin/TextViewXWPluginExample
+TARGET   = bin/qutimearrayplot-example
 
 # unix:LIBS += -L. -lmylib
 

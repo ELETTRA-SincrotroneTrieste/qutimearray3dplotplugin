@@ -15,6 +15,7 @@
 #include <QtDataVisualization/QSurface3DSeries>
 #include <QtDataVisualization/QValue3DAxis>
 #include <QDateTime>
+#include <QElapsedTimer>
 #include <QMap>
 
 class SurfStyleProps {
@@ -60,7 +61,7 @@ public:
 };
 
 QuTimeArray3DPlot::QuTimeArray3DPlot(QWindow *parent) :
-    Q3DSurface(nullptr, parent)
+    Q3DSurface()
 {
     d = new TimeArray3DPlotPrivate();
     m_init();
@@ -398,7 +399,7 @@ void QuTimeArray3DPlot::setZAxisAutoscaleEnabled(bool en) {
 }
 
 void QuTimeArray3DPlot::getXYItemRange() {
-    QTime t;
+    QElapsedTimer t;
     t.start();
     foreach(QSurface3DSeries *s, seriesList()) {
         QSurfaceDataProxy *data_proxy = s->dataProxy();

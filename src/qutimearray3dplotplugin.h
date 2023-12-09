@@ -28,7 +28,7 @@ public:
 
     QuTimeArrayReader_I *createReader(QObject * parent, Cumbia *cumbia, const CuControlsReaderFactoryI &rf) const;
     QuTimeArrayReader_I *createReader(QObject * parent, CumbiaPool *cumbia_pool, const CuControlsFactoryPool &fpool) const;
-    QtDataVisualization::Q3DSurface *create(const QString &name, QWindow *parent);
+    QWindow *create(const QString &name, QWindow *parent);
 };
 
 

@@ -34,7 +34,7 @@ QuTimeArray3DPlotPlugin::~QuTimeArray3DPlotPlugin()
 
 }
 
-Q3DSurface *QuTimeArray3DPlotPlugin::create(const QString &name, QWindow *parent)
+QWindow *QuTimeArray3DPlotPlugin::create(const QString &name, QWindow *parent)
 {
     if(name == "QuTimeArray3DPlot") {
         return new QuTimeArray3DPlot(parent);

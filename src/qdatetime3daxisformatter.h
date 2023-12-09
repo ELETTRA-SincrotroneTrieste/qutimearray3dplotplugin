@@ -4,7 +4,6 @@
 #include <QValue3DAxisFormatter>
 #include <QDateTime>
 #include <QVector>
-#include <QtDataVisualization>
 
 class QDateTime3DAxisFormatterPrivate;
 
@@ -22,9 +21,9 @@ public:
 
     //! [0]
     virtual QValue3DAxisFormatter *createNewInstance() const;
-    virtual void populateCopy(QValue3DAxisFormatter &copy) const;
+    void populateCopy(QValue3DAxisFormatter &copy) const;
     virtual void recalculate();
-    virtual QString stringForValue(qreal value, const QString &format) const;
+    virtual QString stringForValue(qreal value, const QString &format);
     //! [0]
 
     QDateTime originDateTime() const;
