@@ -21,7 +21,7 @@ TEMPLATE = app
 
 QT +=  core gui
 
-QT += graphs
+QT += datavisualization
 
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
