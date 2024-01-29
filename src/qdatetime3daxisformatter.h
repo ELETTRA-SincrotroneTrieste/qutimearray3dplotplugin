@@ -5,6 +5,10 @@
 #include <QDateTime>
 #include <QVector>
 
+#if QT_VERSION < QT_VERSION_CHECK(6,0,0)
+using namespace QtDataVisualization;
+#endif
+
 class QDateTime3DAxisFormatterPrivate;
 
 class QDateTime3DAxisFormatter : public QValue3DAxisFormatter
