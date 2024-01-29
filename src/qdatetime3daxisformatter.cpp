@@ -4,6 +4,10 @@
 #include <cumacros.h>
 #include <QtDebug>
 
+#if QT_VERSION < QT_VERSION_CHECK(6,0,0)
+using namespace QtDataVisualization;
+#endif
+
 Q_DECLARE_METATYPE(QValue3DAxisFormatter *)
 
 

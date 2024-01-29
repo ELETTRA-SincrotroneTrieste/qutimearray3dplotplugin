@@ -7,6 +7,9 @@
 class TimeArray3DPlotPrivate;
 class CuData;
 
+#if QT_VERSION < QT_VERSION_CHECK(6,0,0)
+using namespace QtDataVisualization;
+#endif
 
 /*! \brief
  *
