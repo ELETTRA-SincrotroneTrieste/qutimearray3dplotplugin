@@ -36,7 +36,17 @@ TARGET = qutimearray3dplotplugin
 TEMPLATE = lib
 CONFIG += plugin
 
-CONFIG += debug
+isEmpty(buildtype) {
+        buildtype = release
+} else {
+    equals(buildtype, debug) {
+        message("")
+        message("debug build")
+        message("")
+    }
+}
+
+CONFIG += $${buildtype}
 
 DEFINES -= QT_NO_DEBUG_OUTPUT
 
